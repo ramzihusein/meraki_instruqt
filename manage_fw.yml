@@ -18,20 +18,18 @@
         network_id: "{{ item.id }}"
       when: item.name == network_name
       loop: "{{ result.meraki_response }}"
-
-    ############## Add tasks below ############ Uncomment/copy and paste
     
-    # - name: Update IP rules
-    #   cisco.meraki.networks_appliance_firewall_l3_firewall_rules:
-    #    meraki_api_key: "{{ meraki_key }}"
-    #    state: present
-    #    networkId: "{{ network_id }}"
-    #    rules:
-    #     - comment: Deny Traffic to 4.2.2.2
-    #       destCidr: 4.2.2.2
-    #       destPort: Any
-    #       policy: deny
-    #       protocol: Any
-    #       srcCidr: Any
-    #       srcPort: Any
-    #       syslogEnabled: false
+    - name: Update IP rules
+      cisco.meraki.networks_appliance_firewall_l3_firewall_rules:
+        meraki_api_key: "{{ meraki_key }}"
+        state: present
+        networkId: "{{ network_id }}"
+        rules:
+         - comment: Deny Traffic to 4.2.2.2
+           destCidr: 4.2.2.2
+           destPort: Any
+           policy: deny
+           protocol: Any
+           srcCidr: Any
+           srcPort: Any
+           syslogEnabled: false
