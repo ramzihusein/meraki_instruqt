@@ -9,7 +9,7 @@ SSID:
     authentication:
       auth_mode: psk
       encryption_mode: wpa
-      psk: 
+      psk: AnsibleisCool
       wpa_encryption_mode: WPA2 only
     visible: false
     availableOnAllAps: true
@@ -20,7 +20,7 @@ SSID:
     authentication:
       auth_mode: psk
       encryption_mode: wpa
-      psk: 
+      psk: Ansible4theWin
       wpa_encryption_mode: WPA2 only
     state: present
     visible: true
