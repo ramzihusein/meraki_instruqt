@@ -3,7 +3,7 @@ meraki_api_key: "{{ meraki_key }}"
 org_id: "{{ org_id }}"
 
 SSID:
-  - name: 
+  - name: AE Guest
     number: 1
     enabled: true
     authentication:
@@ -14,7 +14,7 @@ SSID:
     visible: false
     availableOnAllAps: true
     
-  - name: 
+  - name: AE Employees
     number: 2
     enabled: true
     authentication:
@@ -28,26 +28,4 @@ SSID:
     visible: true
     availableOnAllAps: true
     
-  - name: 
-    number: 3
-    enabled: false
-    authentication:
-      auth_mode: psk
-      encryption_mode: wpa
-      psk: 
-      wpa_encryption_mode: WPA2 only
-    state: present
-    visible: false
-    availableOnAllAps: true
-    
-  - name: 
-    number: 4
-    enabled: true
-    authentication:
-      auth_mode: psk
-      encryption_mode: wpa
-      psk: 
-      wpa_encryption_mode: WPA2 only
-    state: present
-    visible: false
-    availableOnAllAps: true
+
