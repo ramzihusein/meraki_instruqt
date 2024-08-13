@@ -1,8 +1,8 @@
 ---
 - hosts: localhost
 
-  vars_files:
-### Variable file name here 
+  vars_files: 
+    - ssid_vars.yml
 
 
   tasks:
@@ -21,7 +21,7 @@
     - name: Edit SSID Settings
       cisco.meraki.networks_wireless_ssids: 
         meraki_api_key: "{{ meraki_key }}"
-        networkId: "{{ filtered_networks.0.id }}"
+        networkId: "{{ filtered_networks.2.id }}"
         enabled: "{{ item.enabled }}"
         state: "{{ item.state | default('present') }}"
         name: "{{ item.name }}"
