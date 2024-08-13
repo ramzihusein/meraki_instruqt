@@ -17,20 +17,19 @@
         filtered_networks: "{{ result.meraki_response | selectattr('productTypes', 'contains', 'wireless') | list }}"
       register: network_id_get
 
-    ############## Add tasks below ############ Uncomment/copy and paste
 
-    # - name: SSID Settings
-    #   cisco.meraki.networks_wireless_ssids:
-    #    meraki_api_key: "{{  meraki_key  }}"
-    #    networkId: "{{ filtered_networks.0.id }}"
-    #    enabled: true
-    #    state: present
-    #    name: "{{ ssid_name }}"
-    #    number: "{{ ssid_number }}"
-    #    encryptionMode: "wpa"
-    #    authMode: "psk"
-    #    psk: "{{ preshared_key }}"
-    #    wpaEncryptionMode: "WPA2 only"
-    #    visible: "true"
-    #    availableOnAllAps: "true"
-    #   delegate_to: localhost
+    - name: SSID Settings
+      cisco.meraki.networks_wireless_ssids:
+        meraki_api_key: "{{  meraki_key  }}"
+        networkId: "{{ filtered_networks.0.id }}"
+        enabled: true
+        state: present
+        name: "{{ ssid_name }}"
+        number: "{{ ssid_number }}"
+        encryptionMode: "wpa"
+        authMode: "psk"
+        psk: "{{ preshared_key }}"
+        wpaEncryptionMode: "WPA2 only"
+        visible: "true"
+        availableOnAllAps: "true"
+      delegate_to: localhost
