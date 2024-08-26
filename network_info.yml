@@ -9,6 +9,7 @@
     - name: Get Organization Networks
       cisco.meraki.networks_info:
         meraki_api_key: "{{ meraki_key }}"
+        organizationId: "{{ org_id }}"
       register: result
 
     - name: Print Network Info
