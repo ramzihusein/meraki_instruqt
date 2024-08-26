@@ -1,0 +1,16 @@
+---
+- name: Get Network Info
+
+  hosts: localhost
+  vars:
+    meraki_api_key: "{{ meraki_key }}"
+  
+  tasks:
+    - name: Get Organization Networks
+      cisco.meraki.networks_info:
+        meraki_api_key: "{{ meraki_key }}"
+      register: result
+
+    - name: Print Network Info
+      debug:
+        msg: "{{ result }}"
