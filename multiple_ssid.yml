@@ -21,7 +21,8 @@
     - name: Edit SSID Settings
       cisco.meraki.networks_wireless_ssids: 
         meraki_api_key: "{{ meraki_key }}"
-        networkId: "{{ filtered_networks.2.id }}"
+#        networkId: "{{ filtered_networks.2.id }}"
+        networkId: "{{ network_id }}"
         enabled: "{{ item.enabled }}"
         state: "{{ item.state | default('present') }}"
         name: "{{ item.name }}"
