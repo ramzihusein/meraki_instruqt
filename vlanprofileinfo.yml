@@ -10,7 +10,7 @@
       cisco.meraki.networks_vlan_profiles_info:
         meraki_api_key: "{{ meraki_key }}"
         networkId: "{{ network_id }}"
-        iname: aetest
+    #    iname: aetest
       register: result
 
     - name: Print Network Info
