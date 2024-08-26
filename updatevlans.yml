@@ -12,7 +12,7 @@
         state: present
         networkId: "{{ network_id }}"
         iname: Default
-        name: Default Profile
+#        name: Default Profile
         vlanGroups:
         - name: named-group-1
           vlanIds: 2,5-7
