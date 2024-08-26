@@ -1,0 +1,17 @@
+---
+- name: Get VLAN Profile Info
+
+  hosts: localhost
+  vars:
+    meraki_api_key: "{{ meraki_key }}"
+  
+  tasks:
+    - name: Get Info
+      cisco.meraki.networks_vlan_profiles_info:
+        meraki_api_key: "{{ meraki_key }}"
+        networkId: "{{ network_id }}"
+      register: result
+
+    - name: Print Network Info
+      debug:
+        msg: "{{ result }}"
