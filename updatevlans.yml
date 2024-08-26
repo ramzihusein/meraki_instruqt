@@ -11,7 +11,7 @@
         meraki_api_key: "{{ meraki_api_key }}"
         state: present
         networkId: "{{ network_id }}"
-        iname: Default
+        iname: default
 #        name: Default Profile
         vlanGroups:
         - name: named-group-1
