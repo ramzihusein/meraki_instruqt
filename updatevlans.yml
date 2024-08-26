@@ -13,9 +13,9 @@
         networkId: "{{ network_id }}"
         iname: default
 #        name: Default Profile
-        vlanGroups:
-        - name: named-group-1
-          vlanIds: 2,5-7
-        vlanNames:
-        - name: test2
-          vlanId: '2'
+#        vlanGroups:
+#        - name: named-group-1
+#          vlanIds: 2,5-7
+#        vlanNames:
+#        - name: test2
+#          vlanId: '2'
