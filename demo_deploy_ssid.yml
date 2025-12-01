@@ -16,11 +16,18 @@
       set_fact:
         filtered_networks: "{{ result.meraki_response | selectattr('productTypes', 'contains', 'wireless') | list }}"
       register: network_id_get
-     
+
+    - name: Get network_id
+      set_fact:
+        network_id: "{{ item.id }}"
+      when: item.name == network_name
+      loop: "{{ result.meraki_response }}"
+      
     - name: Edit SSID Settings
       cisco.meraki.networks_wireless_ssids: 
         meraki_api_key: "{{ meraki_key }}"
-        networkId: "{{ filtered_networks.0.id }}"
+#        networkId: "{{ filtered_networks.0.id }}"
+        networkId: "{{ network_id }}"
         enabled: "{{ item.enabled }}"
         state: "{{ item.state | default('present') }}"
         name: "{{ item.name }}"
